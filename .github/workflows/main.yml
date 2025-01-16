@@ -1,0 +1,72 @@
+name: React CI
+
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: check out code
+      uses: actions/checkout@v2
+
+    - name: use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Print debugging information
+      run: |
+        echo "Node Version: $(node --version)"
+        echo "NPM Version: $(npm --version)"
+        echo "Working Directory: $(pwd)"
+        echo "Contents of Working Directory: $(ls -1)"
+        echo "Contents of node_modules: $(ls -1 node_modules)"
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check out code
+        uses: actions/checkout@v2
+
+      - name: use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+  
+      - name: Install dependencies
+        run: npm install
+  
+      - name: Run Tests
+        run: npm test 
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: install Netlify CLI
+        run: npm install -g netlify-cli
+      - name: Login to Netlify
+        run: netlify login
+      - name: Link Netlify Site
+        run: netlify link --id fd3790f8-f973-4e0c-b896-94733f901cc0
+      - name: Pull Netlify Environment Information
+        run: netlify status env main
+      - name: Build Project Artifacts
+        run: netlify build
+      - name: Deploy Project Artifacts to Netlify
+        run: netlify deploy --site fd3790f8-f973-4e0c-b896-94733f901cc0
+
+        

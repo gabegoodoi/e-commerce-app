@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: npm install
   
-      # - name: Run Tests
-      #   run: npm test 
+      - name: Run Tests
+        run: npm test 
   deploy:
     needs: test
     runs-on: ubuntu-latest
@@ -61,12 +61,12 @@ jobs:
       - name: Login to Netlify
         run: netlify login
       - name: Link Netlify Site
-        run: netlify link --id fd3790f8-f973-4e0c-b896-94733f901cc0
+        run: netlify link --id 4e83538b-a6a6-480d-9722-1e3fb4e6bc22
       - name: Pull Netlify Environment Information
         run: netlify status env main
       - name: Build Project Artifacts
         run: netlify build
       - name: Deploy Project Artifacts to Netlify
-        run: netlify deploy --site fd3790f8-f973-4e0c-b896-94733f901cc0
+        run: netlify deploy --site 4e83538b-a6a6-480d-9722-1e3fb4e6bc22
 
         

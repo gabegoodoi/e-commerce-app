@@ -1,8 +1,8 @@
-import { useContext, useEffect } from 'react';
-import UserContext from '../../context/UserContext';
+import React, { useContext, useEffect } from 'react';
+import UserContext from '../../context/UserContext.tsx';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { clearCart } from '../../features/cart/cartSlice';
+import { clearCart } from '../../features/cart/cartSlice.tsx';
 import '../../internationalization/i18n';
 import { useTranslation } from 'react-i18next';
 

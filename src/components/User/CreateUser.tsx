@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import UserContext from "../../context/UserContext";
+import UserContext from "../../context/UserContext.tsx";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import '../../internationalization/i18n';
 import { useTranslation } from 'react-i18next';

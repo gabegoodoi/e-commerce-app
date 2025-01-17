@@ -2,6 +2,7 @@ import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import notFoundImage from '../assets/not-found.jpg';
 import '../internationalization/i18n';
 import { useTranslation } from 'react-i18next';
+import React from 'react';
 
 const AccessDenied: React.FC = () => {
     const { t } = useTranslation();

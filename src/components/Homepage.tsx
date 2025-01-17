@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import UserContext from '../context/UserContext';
+import UserContext from '../context/UserContext.tsx';
 import { Container, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../store';
-import ProductCatalog from './Product/ProductCatalog';
+import { RootState, AppDispatch } from '../store.tsx';
+import ProductCatalog from './Product/ProductCatalog.tsx';
 import { NavLink } from 'react-router-dom';
-import { setCart } from '../features/cart/cartSlice';
+import { setCart } from '../features/cart/cartSlice.tsx';
 import '../internationalization/i18n';
 import { useTranslation } from 'react-i18next';
 

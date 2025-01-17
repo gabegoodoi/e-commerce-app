@@ -6,17 +6,17 @@ import { useTranslation } from 'react-i18next';
 
 // Import all homemade components
 import './internationalization/i18n';
-import Login from './components/User/Login';
-import CreateUser from './components/User/CreateUser';
-import UpdateUser from './components/User/UpdateUser';
-import DeleteUser from './components/User/DeleteUser';
-import CartHistory from './components/User/CartHistory';
-import Logout from './components/User/Logout';
-import UserContext from './context/UserContext';
-import Homepage from './components/Homepage';
-import ShoppingCart from './components/Product/ShoppingCart';
-import NotFound from './components/NotFound';
-import AccessDenied from './components/AccessDenied';
+import Login from './components/User/Login.tsx';
+import CreateUser from './components/User/CreateUser.tsx';
+import UpdateUser from './components/User/UpdateUser.tsx';
+import DeleteUser from './components/User/DeleteUser.tsx';
+import CartHistory from './components/User/CartHistory.tsx';
+import Logout from './components/User/Logout.tsx';
+import UserContext from './context/UserContext.tsx';
+import Homepage from './components/Homepage.tsx';
+import ShoppingCart from './components/Product/ShoppingCart.tsx';
+import NotFound from './components/NotFound.tsx';
+import AccessDenied from './components/AccessDenied.tsx';
 
 // Import styles and bootstrap
 import './App.css';

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../features/cart/cartSlice';
+import { addItem } from '../../features/cart/cartSlice.tsx';
 import { Button, Card, Row, Col, Spinner, Alert, Nav, Navbar, Dropdown, Form, InputGroup, Container } from 'react-bootstrap';
 import { useQuery } from '@tanstack/react-query';
 import '../../internationalization/i18n';

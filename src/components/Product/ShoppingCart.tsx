@@ -1,12 +1,13 @@
-import { useMemo, useCallback, useEffect, useState } from 'react';
+import React, { useMemo, useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, removeItem, checkout, initializeCart } from '../../features/cart/cartSlice';
+import { addItem, removeItem, checkout, initializeCart } from '../../features/cart/cartSlice.tsx';
 import { ListGroup, Button, Alert, Container } from 'react-bootstrap';
 import { useQueries } from '@tanstack/react-query';
 import '../../internationalization/i18n';
 import { useTranslation } from 'react-i18next';
-import { RootState } from '../../store'; 
-import { AppDispatch } from '../../store'; // Adjust the path to your store file if needed
+import { RootState } from '../../store.tsx'; 
+import { AppDispatch } from '../../store.tsx'; // Adjust the path to your store file if needed
+  
 
 
 const ShoppingCart = () => {

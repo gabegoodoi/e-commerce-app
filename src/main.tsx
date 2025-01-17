@@ -1,9 +1,9 @@
 // Here's where it comes to life!
-
+import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { store } from './store.tsx';
 import ReactDOM from 'react-dom/client';
-import SemanticAppLayout from './SemanticAppLayout';
+import SemanticAppLayout from './SemanticAppLayout.tsx';
 
 // Initialize a React app by creating a root element for it
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

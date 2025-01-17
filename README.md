@@ -1,7 +1,7 @@
 # E-commerce Web Application
 
 ## Project Overview
-This project is a React-based e-commerce application written in mostly typescript that utilizes **FakeStoreAPI** for simulating product data, user management, and shopping cart functionalities. The application demonstrates React concepts, including state management with **Redux Toolkit**, data fetching with **React Query**, and user authentication. It also incorporates **React-i18next** for internationalization and accessibility features. Additionally the application incorporates Continuous Integration & Continuous Deployment Practices through GitHub Actions workflows. The project redeploys to Netlify (can be found at https://ct-ecommerce-store.netlify.app/)after any push in which the CI tests have passed successfully. The GitHub repo that this application exists in can be found at https://github.com/gabegoodoi/e-commerce-app
+This project is a React-based e-commerce Vite application written in mostly typescript that utilizes **FakeStoreAPI** for simulating product data, user management, and shopping cart functionalities. The application demonstrates React concepts, including state management with **Redux Toolkit**, data fetching with **React Query**, and user authentication. It also incorporates **React-i18next** for internationalization and accessibility features. Additionally the application incorporates Continuous Integration & Continuous Deployment Practices through GitHub Actions workflows. The project redeploys to Netlify (can be found at https://ct-ecommerce-store.netlify.app/)after any push in which the CI tests have passed successfully. The GitHub repo that this application exists in can be found at https://github.com/gabegoodoi/e-commerce-app
 
 ## Key Features
 - **User CRUD**: Create, read, update, and delete user profiles.
@@ -19,7 +19,9 @@ This project is a React-based e-commerce application written in mostly typescrip
 4. Start the development server and run the application locally.
 
 ## Project Structure
+- **/.github**: Contains the yml workflow file that propels CI/CD in this project.
 - **/src**
+  - **/__tests__**: Contains a test TSX file for DeleteUser that utilizes Jest.
   - **/components**
     - **/Product**: Contains `ProductCatalog` & `ShoppingCart` TSX components
     - **/User**: Contains `CartHistory`, `CreateUser`, `DeleteUser`, `Login`, `Logout`, & `UpdateUser` components

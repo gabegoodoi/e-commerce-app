@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# E-commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This project is a React-based e-commerce application written in mostly typescript that utilizes **FakeStoreAPI** for simulating product data, user management, and shopping cart functionalities. The application demonstrates React concepts, including state management with **Redux Toolkit**, data fetching with **React Query**, and user authentication. It also incorporates **React-i18next** for internationalization and accessibility features. Additionally the application incorporates Continuous Integration & Continuous Deployment Practices through GitHub Actions workflows. The project redeploys to Netlify (can be found at https://ct-ecommerce-store.netlify.app/)after any push in which the CI tests have passed successfully. The GitHub repo that this application exists in can be found at https://github.com/gabegoodoi/e-commerce-app
 
-Currently, two official plugins are available:
+## Key Features
+- **User CRUD**: Create, read, update, and delete user profiles.
+- **Product Catalog**: Browse, filter, and search for products.
+- **Shopping Cart**: Add, update, and remove products, with real-time calculations for total price and quantity.
+- **Checkout and Order History**: Simulate the checkout process and view past orders.
+- **Performance Optimization**: Use of `useMemo` and `useCallback` to optimize the application.
+- **Internationalization**: Multi-language support with **React-i18next**.
+- **Testing**: Unit and integration tests for DeleteUser components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Steps to Install
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required dependencies.
+4. Start the development server and run the application locally.
 
-## Expanding the ESLint configuration
+## Project Structure
+- **/src**
+  - **/components**
+    - **/Product**: Contains `ProductCatalog` & `ShoppingCart` TSX components
+    - **/User**: Contains `CartHistory`, `CreateUser`, `DeleteUser`, `Login`, `Logout`, & `UpdateUser` components
+    - **AccessDenied**: TSX component for context-forbidden endpoints
+    - **NotFound**: TSX component for non-existent endpoints
+    - **Homepage**: TSX component directory and product catalog display
+  - **/context**: Contains `UserContext` TSX file which stores the logged-in user
+  - **/features**: Contains Redux slices and actions
+  - **/internationalization**: Contains i18n file with key:value language dictionary
+  - **SemanticAppLayout**: TSX file pulling everything together and keeping it current
+  - **store**: Central hub of the application's states
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
+- **React**: For building the user interface.
+- **Redux Toolkit**: For managing global state.
+- **React Query**: For data fetching from the FakeStoreAPI.
+- **React-i18next**: For internationalization (i18n).
+- **Jest**: For testing (unit and integration).
+- **React Testing Library**: For simulating user interactions in tests.
+- **Session Storage**: For persisting token and cart data.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Conclusion
+This project demonstrates the usage of advanced React concepts, including **Redux** for state management, **React Query** for data fetching, and **React-i18next** for internationalization. It simulates a real-world e-commerce platform with user authentication, a product catalog, a shopping cart, and a checkout process, providing a solid foundation for a scalable application. It deploys in the CI/CD method.

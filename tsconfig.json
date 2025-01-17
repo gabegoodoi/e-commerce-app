@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
       "target": "esnext",
-      "module": "commonjs",
+      "moduleResolution": "node",
+      "module": "ESNext",
       "strict": true,
       "esModuleInterop": true,
       "jsx": "react",  // Add this line

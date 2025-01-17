@@ -13,7 +13,6 @@ interface Cart {
     }[];
 }
 
-// Pass the `t` function as a parameter to use it inside `fetchProductDetails`
 const fetchCarts = async (userId: number) => {
     const response = await fetch('https://fakestoreapi.com/carts');
     const carts = await response.json();
@@ -29,10 +28,10 @@ const fetchProductDetails = async (productId: number, t: (key: string) => string
 };
 
 const CartHistory = () => {
-    const [userId, setUserId] = useState<string>(''); // State for userId input
-    const [inputError, setInputError] = useState<string>(''); // State for input validation error
-    const [selectedOrder, setSelectedOrder] = useState<Cart | null>(null); // Specify type of `selectedOrder`
-    const [productDetails, setProductDetails] = useState<any[]>([]); // State to hold fetched product details
+    const [userId, setUserId] = useState<string>(''); 
+    const [inputError, setInputError] = useState<string>(''); 
+    const [selectedOrder, setSelectedOrder] = useState<Cart | null>(null); 
+    const [productDetails, setProductDetails] = useState<any[]>([]);
     const { t } = useTranslation();
 
     const { data: carts, isLoading, error } = useQuery({
@@ -54,7 +53,7 @@ const CartHistory = () => {
 
     const handleOrderClick = async (order: Cart) => {
         setSelectedOrder(order); // Set the clicked order as the selected one
-        const productIds = order.products.map((product) => product.productId); // Type inference here
+        const productIds = order.products.map((product) => product.productId);
         try {
             // Fetch all product details for the selected order
             const details = await Promise.all(

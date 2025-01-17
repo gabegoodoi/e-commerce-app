@@ -50,7 +50,7 @@ const Login: React.FC = () => {
     
             // Create the session object with the required 'name' field
             const userSession = {
-                name: username, // Or set to an empty string if unavailable
+                name: username,
                 username: username,
                 password: userPassword,
                 isLoggedIn: true,

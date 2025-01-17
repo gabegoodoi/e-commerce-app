@@ -6,12 +6,12 @@ import DeleteUser from '../components/User/DeleteUser.tsx';
 describe('DeleteUser Component', () => {
   test('renders DeleteUser component', () => {
     render(<DeleteUser />);
-    expect(screen.getByRole('heading', { name: /delete user/i })).toBeInTheDocument(); // Using heading role for better specificity
+    expect(screen.getByRole('heading', { name: /delete user/i })).toBeInTheDocument();
   });
 
   test('handles form submission successfully', async () => {
     render(<DeleteUser />);
-    const button = screen.getByRole('button', { name: /delete user/i }); // Button matching using role
+    const button = screen.getByRole('button', { name: /delete user/i });
     fireEvent.click(button);
 
     await waitFor(() => {

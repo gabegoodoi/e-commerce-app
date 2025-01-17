@@ -170,7 +170,7 @@ i18n
         lng: "en", // language to use initially
         keySeparator: false, // Set to false since keys in resources are flat
         interpolation: {
-            escapeValue: false, // React already safeguards from XSS
+            escapeValue: false,
         },
     });
 

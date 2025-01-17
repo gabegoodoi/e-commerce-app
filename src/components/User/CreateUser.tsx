@@ -5,7 +5,7 @@ import '../../internationalization/i18n';
 import { useTranslation } from 'react-i18next';
 
 const CreateUser: React.FC = () => {
-    const { setUser } = useContext(UserContext); // Use only setUser
+    const { setUser } = useContext(UserContext);
     const { t } = useTranslation();
 
     const [username, setUsername] = useState('');
@@ -41,7 +41,6 @@ const CreateUser: React.FC = () => {
             phone: phone,
         };
 
-        // Mock API POST request
         fetch('https://fakestoreapi.com/users', {
             method: "POST",
             headers: { "Content-Type": "application/json" },

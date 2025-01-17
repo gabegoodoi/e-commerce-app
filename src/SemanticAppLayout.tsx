@@ -36,7 +36,7 @@ const SemanticAppLayout: React.FC = () => {
   const [user, setUser] = useState<UserType>({
     name: '',
     username: '',
-    token: '', // Default empty token
+    token: '',
     isLoggedIn: false,
   });
   const { t, i18n } = useTranslation();
@@ -52,7 +52,7 @@ const SemanticAppLayout: React.FC = () => {
     if (storedUser) {
         const userSession: UserType = JSON.parse(storedUser);
         if (userSession.isLoggedIn) {
-            setUser(userSession); // Pass a UserType object
+            setUser(userSession);
         }
     }
   }, []);

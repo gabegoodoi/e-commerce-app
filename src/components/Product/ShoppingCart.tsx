@@ -6,7 +6,7 @@ import { useQueries } from '@tanstack/react-query';
 import '../../internationalization/i18n';
 import { useTranslation } from 'react-i18next';
 import { RootState } from '../../store.tsx'; 
-import { AppDispatch } from '../../store.tsx'; // Adjust the path to your store file if needed
+import { AppDispatch } from '../../store.tsx';
   
 
 
@@ -18,8 +18,8 @@ const ShoppingCart = () => {
     const { t } = useTranslation();
 
     useEffect(() => {
-        dispatch(initializeCart()); // Correct usage of useDispatch
-    }, [dispatch]); // Only run once on mount
+        dispatch(initializeCart()); 
+    }, [dispatch]); 
 
     const handleAddItem = useCallback((id: string) => dispatch(addItem({ id })), [dispatch]);
     const handleRemoveItem = useCallback((id: string) => dispatch(removeItem({ id })), [dispatch]);

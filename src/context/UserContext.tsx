@@ -1,6 +1,5 @@
 import { createContext } from "react";
 
-// Define the UserType interface
 export interface UserType {
     name: string;
     username?: string;
@@ -8,10 +7,9 @@ export interface UserType {
     isLoggedIn: boolean;
 }
 
-// Update UserContextType to use UserType
 export interface UserContextType {
-    user: UserType; // Use the UserType interface
-    setUser: (user: UserType) => void; // Function to update the user data in context
+    user: UserType;
+    setUser: (user: UserType) => void;
 }
 
 // Default values for the context

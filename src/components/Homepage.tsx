@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 const Homepage: React.FC = () => {
     const { user } = useContext(UserContext);
     const cartCount = useSelector((state: RootState) => state.cart.totalItems);
-    const dispatch = useDispatch<AppDispatch>(); // Typed dispatch
+    const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
     useEffect(() => {

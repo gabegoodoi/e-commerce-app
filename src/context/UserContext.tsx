@@ -15,7 +15,7 @@ export interface UserContextType {
 }
 
 // Default values for the context
-const defaultContext: UserContextType = {
+export const defaultContext: UserContextType = {
     user: {
         name: "",
         username: "",

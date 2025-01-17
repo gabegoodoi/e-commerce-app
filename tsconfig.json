@@ -1,7 +1,15 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "jsx": "react",  // Add this line
+      "baseUrl": "./",  // Optional: Set base URL for module resolution
+      "paths": {
+        "@/components/*": ["src/components/*"],
+        "@/context/*": ["src/context/*"]
+      }
+    },
+    "include": ["src/**/*"]  
 }

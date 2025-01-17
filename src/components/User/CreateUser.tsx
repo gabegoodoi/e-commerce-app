@@ -20,30 +20,32 @@ const CreateUser: React.FC = () => {
     const handleCreateUser = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // API POST request
+        const mockUser = {
+            email: userEmail,
+            username: username,
+            password: userPassword,
+            name: {
+                firstname: firstName,
+                lastname: lastName,
+            },
+            address: {
+                city: 'N/A',
+                street: 'N/A',
+                number: 0,
+                zipcode: '00000',
+                geolocation: {
+                    lat: '0',
+                    long: '0',
+                },
+            },
+            phone: phone,
+        };
+
+        // Mock API POST request
         fetch('https://fakestoreapi.com/users', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                email: userEmail,
-                username: username,
-                password: userPassword,
-                name: {
-                    firstname: firstName,
-                    lastname: lastName,
-                },
-                address: {
-                    city: 'N/A',
-                    street: 'N/A',
-                    number: 0,
-                    zipcode: '00000',
-                    geolocation: {
-                        lat: '0',
-                        long: '0',
-                    },
-                },
-                phone: phone,
-            }),
+            body: JSON.stringify(mockUser),
         })
         .then((res) => {
             if (!res.ok) {

@@ -5,6 +5,7 @@ import { initReactI18next } from 'react-i18next';
 const resources: Record<string, { translation: Record<string, string> }> = {
     en: {
         translation: {
+            userDeletedSuccess: "User successfully deleted",
             userUpdatedSuccessfully: "User updated successfully",
             cartHistory: "Cart History",
             enterUserId: "Enter User ID",
@@ -83,6 +84,7 @@ const resources: Record<string, { translation: Record<string, string> }> = {
     },
     fr: {
         translation: {
+            userDeletedSuccess: "Utilisateur supprimé avec succès",
             userUpdatedSuccessfully: "Mise à jour de l'utilisateur réussie",
             cartHistory: "Historique du panier",
             enterUserId: "Entrez l'ID utilisateur",
